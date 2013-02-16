@@ -1,9 +1,9 @@
 {
-    "name": "twitter/bootstrap",
-    "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+    "name": "twitter/bootstrap-bundle",
+    "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development. integration into Symfony2.",
     "version": "1.0.0",
     "type": "symfony-bundle",
-    "keywords": ["twitter", "front-end framework", "twitter bootstrap"],
+    "keywords": ["twitter", "front-end framework", "twitter bootstrap", "symfony twitter bootstrap"],
     "homepage": "http://twitter.github.com/bootstrap/",
     "time": "2013-01-16",
     "license": "MIT",
