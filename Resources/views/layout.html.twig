@@ -3,7 +3,7 @@
 {% block body %}
     <div class="container">
         {% block container %}{% endblock %}
-        {% block footer %}<footer><p>&copy; Company 2012</p></footer>{% endblock %}
+        <footer>{% block footer %}<p>&copy; Company 2012</p>{% endblock %}</footer>
     </div>
 {% endblock %}
 

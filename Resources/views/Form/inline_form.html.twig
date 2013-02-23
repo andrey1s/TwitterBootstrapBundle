@@ -1,0 +1,48 @@
+{% extends 'TwitterBootstrapBundle:Form:horizontal_form.html.twig' %}
+{% block form_label %}
+    {% spaceless %}
+        {% if not compound %}
+            {% set label_attr = label_attr|merge({'for': id}) %}
+        {% endif %}
+        {% if required %}
+            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+        {% endif %}
+        {% if label is empty %}
+            {% set label = name|humanize %}
+        {% endif %}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
+    {% endspaceless %}
+{% endblock form_label %}
+
+{% block form_row %}
+    {% if attr.placeholder is not defined %}
+        {% if label is empty %}
+            {% set attr = attr|merge({'placeholder' : name|humanize|trans({}, translation_domain)}) %}
+        {% else %}
+            {% set attr = attr|merge({'placeholder' : label|humanize|trans({}, translation_domain)}) %}
+        {% endif %}
+    {% endif %}
+    {% spaceless %}
+        {{ form_widget(form,{'attr':attr}) }}
+    {% endspaceless %}
+{% endblock form_row %}
+
+
+{% block checkbox_row %}
+    {% set child_vars = {'attr': attr|merge({'inline':true}) } %}
+    {% spaceless %}
+        {{ form_label(form, label, child_vars) }}
+        {{ form_errors(form) }}
+    {% endspaceless %}
+{% endblock checkbox_row %}
+
+{% block choice_widget_expanded %}
+    {% spaceless %}
+        {% set child_vars = {'attr': attr|merge({'inline':true}) } %}
+        <legend class="radio inline">{{ label }}</legend>
+        {% for child in form %}
+            {{ form_label(child, child.vars.label, child_vars) }}
+        {% endfor %}
+    {% endspaceless %}
+{% endblock choice_widget_expanded %}
+
