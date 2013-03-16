@@ -1,0 +1,60 @@
+{% block style_register %}
+    <style>
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            max-width: 400px;
+            padding: 19px 29px 29px;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+        }
+
+        .form-signin .form-sign-in-heading {
+            margin-bottom: 10px;
+        }
+
+        .form-signin.form-horizontal .control-label {
+            width: 120px;
+        }
+
+        .form-signin.form-horizontal .controls {
+            margin-left: 140px;
+        }
+
+        .form-signin input[type="text"],
+        .form-signin input[type="email"],
+        .form-signin input[type="password"] {
+            font-size: 16px;
+            height: auto;
+            margin-bottom: 15px;
+            padding: 7px 9px;
+        }
+    </style>
+{% endblock %}
+{% block fos_user_register %}
+    {% spaceless %}
+    {% form_theme form 'TwitterBootstrapBundle:Form:horizontal_form.html.twig' %}
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="post"
+          class="fos_user_registration_register form-horizontal form-signin">
+        {% block form_heading_register %}<h2 class="form-sign-in-heading">{{ 'register.please.signin'|trans({}, 'TwitterFOSUserBundle') }}</h2>{% endblock %}
+        {{ form_widget(form) }}
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" class="btn btn-primary"
+                       value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}"/>
+            </div>
+        </div>
+    </form>
+{% endspaceless %}
+{% endblock fos_user_register %}

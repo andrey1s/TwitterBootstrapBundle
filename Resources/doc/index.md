@@ -1,5 +1,5 @@
 Getting Started With TwitterBootstrapBundle
-==================================
+===========================================
 
 ## Installation
 
@@ -10,6 +10,7 @@ Installation is a quick (I promise!) 7 step process:
 3. Use the Bundle
 4. Use with the KnpPaginatorBundle
 5. Use with the Form
+6. Use [FOSUserBundle](https://github.com/andrey1s/TwitterBootstrapBundle/blob/master/Resources/doc/FOSUserBundle.md)
 
 
 ### Step 1: Download TwitterBootstrapBundle using composer

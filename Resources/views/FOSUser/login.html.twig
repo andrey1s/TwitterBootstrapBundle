@@ -1,0 +1,56 @@
+{% block style_login %}
+    <style>
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            max-width: 300px;
+            padding: 19px 29px 29px;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+        }
+
+        .form-signin .form-sign-in-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+
+        .form-signin input[type="text"],
+        .form-signin input[type="password"] {
+            font-size: 16px;
+            height: auto;
+            margin-bottom: 15px;
+            padding: 7px 9px;
+        }
+    </style>
+{% endblock %}
+{% block fos_user_login %}
+    {% spaceless %}
+        <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
+            {% block form_heading_login %}<h2 class="form-sign-in-heading">{{ 'login.please.signin'|trans({}, 'TwitterFOSUserBundle') }}</h2>{% endblock %}
+            {% if error is defined %}<div class="alert alert-error error">{{ error|trans({}, 'FOSUserBundle') }}</div>{% endif %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+            <input type="text" id="username" name="_username" class="input-block-level" value="{{ last_username }}"
+                   required="required" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle')[:-1] }}"/>
+            <input type="password" id="password" name="_password" class="input-block-level" required="required"
+                   placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle')[:-1] }}"/>
+            <label class="checkbox">
+                <input type="checkbox" id="remember_me" name="_remember_me"
+                       value="on"/>{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+            </label>
+
+            <input class="btn btn-large btn-primary" type="submit" id="_submit" name="_submit"
+                   value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}"/>
+        </form>
+    {% endspaceless %}
+{% endblock fos_user_login %}
