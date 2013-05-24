@@ -1,9 +1,9 @@
 Getting Started With TwitterBootstrapBundle
 ===========================================
 
-## Installation
+## Installation and usage
 
-Installation is a quick (I promise!) 7 step process:
+Installation and usage is a quick:
 
 1. Download TwitterBootstrapBundle using composer
 2. Enable the Bundle
