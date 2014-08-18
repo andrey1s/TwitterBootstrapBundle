@@ -7,7 +7,6 @@
 
 namespace Twitter\BootstrapBundle\Tests\DependencyInjection;
 
-
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Twitter\BootstrapBundle\DependencyInjection\TwitterBootstrapExtension;

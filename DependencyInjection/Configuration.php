@@ -20,9 +20,30 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('twitter_bootstrap');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+
+                ->arrayNode('assets')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->arrayNode('stylesheets')
+                        ->defaultValue(array(
+                                'bundles/twitterbootstrap/css/bootstrap.min.css',
+                                'bundles/twitterbootstrap/css/bootstrap-responsive.min.css',
+                            ))
+                        ->prototype('scalar')->end()
+                    ->end()
+                    ->arrayNode('javascripts')
+                    ->defaultValue(array(
+                            'bundles/twitterbootstrap/js/bootstrap.min.js',
+                            '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js',
+                        ))
+                    ->prototype('scalar')->end()
+                    ->end()
+                    ->end()
+                ->end()
+
+            ->end();
 
         return $treeBuilder;
     }

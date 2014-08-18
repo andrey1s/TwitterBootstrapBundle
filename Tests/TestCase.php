@@ -7,7 +7,6 @@
 
 namespace Twitter\BootstrapBundle\Tests;
 
-
 abstract class TestCase  extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()

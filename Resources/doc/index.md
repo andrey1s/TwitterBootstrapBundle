@@ -10,7 +10,8 @@ Installation and usage is a quick:
 3. Use the Bundle
 4. Use with the KnpPaginatorBundle
 5. Use with the Form
-6. Use [FOSUserBundle](https://github.com/andrey1s/TwitterBootstrapBundle/blob/master/Resources/doc/FOSUserBundle.md)
+6. Replace stylesheets or/and javascripts
+7. Use [FOSUserBundle](https://github.com/andrey1s/TwitterBootstrapBundle/blob/master/Resources/doc/FOSUserBundle.md)
 
 
 ### Step 1: Download TwitterBootstrapBundle using composer
@@ -55,16 +56,24 @@ public function registerBundles()
 ### Step 3: Use the bundle
 
 in layout add extends
-``` html
+``` htm
 {% extends "TwitterBootstrapBundle::layout.html.twig" %}
 ```
 
 if you want use only java scripts
 ``` html
+{{ twitter_assets('javascripts') }}
+```
+or
+``` html
 {% include 'TwitterBootstrapBundle::javascripts.html.twig'%}
 ```
 
 if you want use only CSS
+``` html
+{{ twitter_assets('stylesheets') }}
+```
+or
 ``` html
 {% include 'TwitterBootstrapBundle::stylesheets.html.twig'%}
 ```
@@ -133,4 +142,18 @@ or in html
 
 ``` html
 {{ form_widget(form, {'attr': {'append_input': '.00'}}) }}
+```
+
+### Step 6: Replace stylesheets or/and javascripts.
+
+``` yaml
+# app/config/config.yml
+twitter_bootstrap:
+    assets:
+        stylesheets:
+            - bundles/twitterbootstrap/css/bootstrap.min.css
+            - bundles/twitterbootstrap/css/bootstrap-responsive.min.css
+        javascripts:
+            - bundles/twitterbootstrap/js/bootstrap.min.js
+            - //ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js
 ```
