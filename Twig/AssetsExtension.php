@@ -1,7 +1,7 @@
 <?php
 namespace Twitter\BootstrapBundle\Twig;
 
-use Symfony\Bundle\TwigBundle\Extension\AssetsExtension as BaseExtension;
+use Symfony\Bridge\Twig\Extension\AssetExtension as BaseExtension;
 
 class AssetsExtension extends \Twig_Extension
 {
