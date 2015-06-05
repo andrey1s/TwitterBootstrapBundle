@@ -6,14 +6,15 @@ use Symfony\Bundle\TwigBundle\Extension\AssetsExtension as BaseExtension;
 class AssetsExtension extends \Twig_Extension
 {
     /** @var array */
-    private $assets = [];
+    private $assets = array();
     /** @var \Symfony\Bundle\TwigBundle\Extension\AssetsExtension */
+
     private $extension;
     /** @var array */
-    private $pattern = [
+    private $pattern = array(
         'stylesheets' => '<link href="{{ value }}" rel="stylesheet" type="text/css"/>',
         'javascripts' => '<script src="{{ value }}" type="text/javascript"></script>'
-    ];
+    );
 
     /**
      * @param BaseExtension $extension
