@@ -219,3 +219,11 @@
         {% for attrname, attrvalue in attr %}{{ attrname }}="{{ attrvalue }}" {% endfor %}
     {% endspaceless %}
 {% endblock button_attributes %}
+
+{% block button_row -%}
+    <div class="control-group">
+        <div class="controls">
+            {{- form_widget(form) -}}
+        </div>
+    </div>
+{%- endblock button_row %}
