@@ -2,9 +2,9 @@
 /**
  * @author Andrey <asamusev@archer-soft.com>
  * @copyright andrey 3/16/13
+ *
  * @version 1.0.0
  */
-
 namespace Twitter\BootstrapBundle\Tests\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -26,7 +26,7 @@ class TwitterBootstrapExtensionTest extends TestCase
     {
         $container = new ContainerBuilder(new ParameterBag(array(
             'kernel.cache_dir' => __DIR__,
-            'kernel.root_dir' => __DIR__ . '/Fixtures',
+            'kernel.root_dir' => __DIR__.'/Fixtures',
             'kernel.charset' => 'UTF-8',
             'kernel.debug' => false,
             'kernel.bundles' => array('TwitterBootstrapBundle' => 'Twitter\\BootstrapBundle\\TwitterBootstrapBundle'),
@@ -41,5 +41,4 @@ class TwitterBootstrapExtensionTest extends TestCase
         $container->getCompilerPassConfig()->setRemovingPasses(array());
         $container->compile();
     }
-
 }
