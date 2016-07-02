@@ -4,7 +4,6 @@
     "type": "symfony-bundle",
     "keywords": ["twitter", "front-end framework", "twitter bootstrap", "symfony twitter bootstrap"],
     "homepage": "http://twitter.github.com/bootstrap/",
-    "time": "2013-01-16",
     "license": "MIT",
     "authors": [
         {
@@ -15,12 +14,11 @@
     ],
     "require": {
         "php": ">=5.4",
-        "symfony/symfony": ">=2.7,<3.0-dev",
-        "symfony/twig-bridge": ">=2.3,<3.0-dev"
+        "symfony/twig-bridge": "~2.8|~3.0"
     },
     "require-dev": {
-        "friendsofsymfony/user-bundle": "1.*",
-        "knplabs/knp-paginator-bundle": "2.3.*"
+        "friendsofsymfony/user-bundle": "2.0.*@dev",
+        "knplabs/knp-paginator-bundle": "~2.3"
     },
     "autoload": {
         "psr-4": {
