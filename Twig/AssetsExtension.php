@@ -1,4 +1,5 @@
 <?php
+
 namespace Twitter\BootstrapBundle\Twig;
 
 use Symfony\Bridge\Twig\Extension\AssetExtension as BaseExtension;
@@ -12,7 +13,7 @@ class AssetsExtension extends \Twig_Extension
     /** @var array */
     private $pattern = [
         'stylesheets' => '<link href="{{ value }}" rel="stylesheet" type="text/css"/>',
-        'javascripts' => '<script src="{{ value }}" type="text/javascript"></script>'
+        'javascripts' => '<script src="{{ value }}" type="text/javascript"></script>',
     ];
 
     /**
@@ -28,7 +29,7 @@ class AssetsExtension extends \Twig_Extension
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getFunctions()
     {
@@ -63,15 +64,13 @@ class AssetsExtension extends \Twig_Extension
         }
 
         return $string;
-
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getName()
     {
         return 'twitter_assets';
     }
-
 }
